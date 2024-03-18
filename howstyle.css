@@ -1,0 +1,58 @@
+body {
+    align-items: center;
+    justify-content: center;
+    background-image: url('pictures/backgroundimg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+}
+
+h1 {
+    font-family: 'Josefin Sans';
+    text-align: center;
+    color:white;
+    font-size:60px;
+    letter-spacing: 15px;
+    margin-top: 100px;
+}
+
+
+div.bgb {
+    margin: auto;
+    padding: 20px; 
+    text-align: center;
+    font-family:'Josefin Sans';
+    width: 1000px; 
+    height: 500px; 
+    font-size:19px;
+    border-radius: 20px; 
+    border: 1px solid none;
+    background: #00000065;
+}
+
+div.border1 {
+    margin:40px;
+    padding: 20px; 
+    text-align: center;
+    font-family:'Josefin Sans';
+    width: 900px; 
+    height:150px;
+    font-size:19px;
+    border-radius: 20px; 
+    border: 1px solid none;
+    background: #817f7fad;
+} 
+
+p {
+    text-align: left;
+}
+a{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.692);
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 90px;
+    font-family: 'Josefin Sans';
+}

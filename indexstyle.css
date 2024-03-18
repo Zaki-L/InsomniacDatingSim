@@ -1,0 +1,36 @@
+h1 {
+ font-family: 'Josefin Sans';
+ text-align: center;
+ color:white;
+ font-size:60px;
+ letter-spacing: 15px;
+ margin-top: 200px;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    background-image: url('pictures/backgroundimg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+}
+
+a {
+    display: block;
+    text-decoration: none; 
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: 'Josefin Sans'; 
+    font-size: 19px;
+    border: none;
+    background: #00000065;
+    margin-top: 5px;
+    transform: translateY(-50%);
+}
+.container{
+    margin-top: 200px;
+}
+

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rokkitt&display=swap" rel="stylesheet">
+		
+		<style>
+			
+			body{
+				background: #fff8f0;
+			}
+			
+			img{
+				width: 46%;
+				height: auto;
+				margin-left: 27%;
+				margin-top: 5%;
+			}
+			
+			.bg{
+				position: absolute;
+				z-index: -1;
+				border: solid 2px #3e2a5e;
+			}
+			
+			.sp{
+				position: absolute;
+				z-index: 0;
+			}
+			
+			.tb{
+				position: absolute;
+				z-index: 1;
+				width: 44%;
+				height: 17%;
+				margin-left: 28%;
+				margin-top: 30%;
+				background: #f0ecdf;
+				padding: 50px;
+				opacity: 0.75;
+				border-radius: 10px;
+				color: #280b57;
+			}
+			
+			.tt{
+				position: absolute;
+				z-index: 2;
+				width: 44%;
+				height: 17%;
+				margin-left: 28%;
+				margin-top: 30%;
+				padding: 20px;
+				padding-top: 40px;
+				font-size: 17px;
+				font-weight: 600;
+				font-family: "Rokkitt", serif;
+				color: #280b57;
+				text-shadow: 
+				-1px 1px 0 #faf9f5,
+				1px 1px 0 #faf9f5,
+				1px -1px 0 #faf9f5;
+				-1px -1px 0 #faf9f5;
+
+			}
+			
+			.tn{
+				position: absolute;
+				z-index: 3;
+				width: 44%;
+				height: 17%;
+				margin-left: 28%;
+				margin-top: 30%;
+				padding: 10px;
+				padding-top: 4px;
+				font-size: 25px;
+				font-weight: bolder;
+				font-family: "Rokkitt", serif;
+				color: #280b57;
+				text-shadow: 
+				-2px 2px 0 #faf9f5,
+				2px 2px 0 #faf9f5,
+				2px -2px 0 #faf9f5;
+				-2px -2px 0 #faf9f5;
+			}
+			
+			.bt{
+				position: absolute;
+				z-index: 4;
+				font-size: 9px;
+				margin-left: 68.7%;
+				margin-top: 36%;
+				font-family: "Rokkitt", serif;
+				color: #f0ecdf;
+				background: #280b57;
+				font-weight: bold;
+			}
+			
+			.choicea{
+				position: absolute;
+				z-index: 4;
+				width: 26%;
+				margin-left: 37%;
+				margin-top: 32.5%;
+				font-family: "Rokkitt", serif;
+				color: #f0ecdf;
+				background: #280b57;
+				font-weight: bold;
+			}
+			
+			.choiceb{
+				position: absolute;
+				z-index: 4;
+				width: 26%;
+				margin-left: 37%;
+				margin-top: 35%;
+				font-family: "Rokkitt", serif;
+				color: #f0ecdf;
+				background: #280b57;
+				font-weight: bold;
+			}
+			
+			button:hover{
+				background: #6d4ba3;
+				color: #f0ecdf;
+			}
+			
+			.hom{
+				position: absolute;
+				z-index: 5;
+				width: 10%;
+				margin-left: 27%;
+				margin-top: 40%;
+				font-family: "Rokkitt", serif;
+				color: #f0ecdf;
+				background: #280b57;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			
+			.res{
+				position: absolute;
+				z-index: 5;
+				width: 10%;
+				margin-left: 63%;
+				margin-top: 40%;
+				font-family: "Rokkitt", serif;
+				color: #f0ecdf;
+				background: #280b57;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			
+		</style>
+		
+		<script>
+			winCondition = 0;
+			
+			function SL1(){
+				const bod = document.getElementById('body');
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "Hm? Need something ducky?";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL2;
+			}
+			
+			function SL2(){
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "I told you to stop calling me that, muffin.";
+				document.getElementById('e').innerHTML = "You";
+				document.getElementById('f').onclick = SL3;
+			}
+			
+			function SL3(){
+				document.getElementById('b').src = "images/sprites/pout.png";
+				document.getElementById('d').innerHTML = "Only if you stop calling me muffin!";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL4;
+			}
+			
+			function SL4(){
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "Anyway, what are you doing in my room?";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL5;
+			}
+			
+			function SL5(){
+				document.getElementById('b').src = "images/sprites/blush.png";
+				document.getElementById('d').innerHTML = "Nothing much, just came to check up on you.";
+				document.getElementById('e').innerHTML = "You";
+				document.getElementById('f').onclick = SL6;
+			}
+			
+			function SL6(){
+				document.getElementById('b').src = "images/sprites/smug.png";
+				document.getElementById('d').innerHTML = "Aww, you’re so sweet! you really care about me that much?";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL7;
+			}
+			
+			function SL7(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoicea = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoicea );
+				newChoicea.className = "choicea btn";
+				newChoicea.innerHTML = 'Yeah, I’m worried about you, Oliver. You should sleep.';
+				newChoicea.id = 'Cid1';
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'Just checking if you were being self destructive again.';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = null;
+				document.getElementById('e').innerHTML = "You";
+				
+				newChoicea.addEventListener('click', () => {
+					SL8a();
+				})
+				newChoiceb.addEventListener('click', () => {
+					SL8b(); 
+				})
+			}
+			
+			function SL8a(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+			
+				winCondition++;
+			
+				document.getElementById('b').src = "images/sprites/blush.png";
+				document.getElementById('d').innerHTML = "O-oh.. I.. you shouldn't worry all that much. I’ll sleep after I get these done, promise.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL9;
+			}
+			
+			function SL8b(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				winCondition--;
+				
+				document.getElementById('b').src = "images/sprites/smug.png";
+				document.getElementById('d').innerHTML = "Nah, you loooove me don’t you? No need to lie! Aww, would poor wittle ducky be ashamed to be caught worrying about poor wittle ole’ me?  Am I really that unlovable to you?";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL9;
+			}
+			
+			function SL9(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoicea = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoicea );
+				newChoicea.className = "choicea btn";
+				newChoicea.innerHTML = "Still worried, you haven't had a proper sleep in three days";
+				newChoicea.id = 'Cid1';
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'Yeah, I doubt that. No offense but you have horrible habits';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = null;
+				document.getElementById('e').innerHTML = "You";
+				
+				newChoicea.addEventListener('click', () => {
+					SL10a();
+				})
+				newChoiceb.addEventListener('click', () => {
+					SL10b(); 
+				})
+			}
+			
+			function SL10a(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				winCondition++;
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "I’ll be fine. I’ve been up for much longer.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL11;
+			}
+			
+			function SL10b(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				winCondition--;
+				
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = "Yeah… well, I really don’t need to hear you ridicule me right now.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL11;
+			}
+			
+			function SL11(){
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = "Besides, I can’t sleep anyway. I’m not sleepy.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL12;
+			}
+			
+			function SL12(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoicea = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoicea );
+				newChoicea.className = "choicea btn";
+				newChoicea.innerHTML = 'Want some tea? Or does muffin want a muffin too?';
+				newChoicea.id = 'Cid1';
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'Just lay in bed. You’ll fall asleep, works for me all the time.';;
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = null;
+				document.getElementById('e').innerHTML = "You";
+				
+				newChoicea.addEventListener('click', () => {
+					SL13a(); 
+				})
+				newChoiceb.addEventListener('click', () => {
+					SL13b(); 
+				})
+			}
+			
+			function SL13a(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				winCondition++;
+				
+				document.getElementById('b').src = "images/sprites/blush.png";
+				document.getElementById('d').innerHTML = "U-uhm… there’s, there’s really no need. Just... I’ll be fine, promise. I’ll sleep soon.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL14;
+			}
+			
+			function SL13b(){
+				const bod = document.getElementById('body');
+				const buta = document.getElementById('Cid1');
+				bod.removeChild(buta);
+				const butb = document.getElementById('Cid2');
+				bod.removeChild(butb);
+				
+				nextBut = document.createElement( "BUTTON" );
+				document.body.appendChild( nextBut );
+				nextBut.className = "bt btn";
+				nextBut.innerHTML = 'Next';
+				nextBut.id = 'f';
+				
+				winCondition--;
+				
+				document.getElementById('b').src = "images/sprites/mad.png";
+				document.getElementById('d').innerHTML = "You know it doesn’t work like that. I have insomnia, stupid. Remember?? I can’t just *poof* and fall asleep like you.";
+				document.getElementById('e').innerHTML = "Oliver";
+				document.getElementById('f').onclick = SL14;
+			}
+			
+			function SL14(){
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = "Yeah, okay... Maybe I should just go back to my room?";
+				document.getElementById('e').innerHTML = "You";
+				document.getElementById('f').onclick = SL15;
+			}
+			
+			function SL15(){
+				if(winCondition == 3){
+					document.getElementById('b').src = "images/sprites/blush.png";
+					document.getElementById('d').innerHTML = "No, hey, um... can you... stay the night? In my room? I... I could use the company."
+					document.getElementById('e').innerHTML = "Oliver";
+					document.getElementById('f').onclick = SL16a;
+				}
+				if(winCondition == 1){
+					document.getElementById('b').src = "images/sprites/smile.png";
+					document.getElementById('d').innerHTML = "Yeah, it's getting late. Night, ducky.";
+					document.getElementById('e').innerHTML = "Oliver";
+					document.getElementById('f').onclick = SL16b;
+				}
+				if(winCondition == -1){
+					document.getElementById('b').src = "images/sprites/frown.png";
+					document.getElementById('d').innerHTML = "Maybe you should. Good night.";
+					document.getElementById('e').innerHTML = "Oliver";
+					document.getElementById('f').onclick = SL16c;
+				}
+				if(winCondition == -3){
+					document.getElementById('b').src = "images/sprites/mad.png";
+					document.getElementById('d').innerHTML = "Yeah. Leave before I punch you in your stupid face. If you can't say anything good maybe don't come knocking on my door.";
+					document.getElementById('e').innerHTML = "Oliver";
+					document.getElementById('f').onclick = SL16d;
+				}
+			}
+			
+			function SL16a(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'RESTART';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "You successfully got Oliver to go to sleep!";
+				document.getElementById('e').innerHTML = "Best Ending";
+				
+				newChoiceb.addEventListener('click', () => {
+					SL1(); 
+				})
+				
+				winCondition = 0;
+			}
+			
+			function SL16b(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'RESTART';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/smile.png";
+				document.getElementById('d').innerHTML = "You weren't successful, but left on good terms.";
+				document.getElementById('e').innerHTML = "Good Ending";
+				
+				newChoiceb.addEventListener('click', () => {
+					SL1(); 
+				})
+				
+				winCondition = 0;
+			}
+			
+			function SL16c(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'RESTART';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = "You worsened Oliver's mood a bit. Unsuccessful.";
+				document.getElementById('e').innerHTML = "Bad Ending";
+				
+				newChoiceb.addEventListener('click', () => {
+					SL1(); 
+				})
+				
+				winCondition = 0;
+			}
+			
+			function SL16d(){
+				const bod = document.getElementById('body');
+				const buttn = document.getElementById('f');
+				bod.removeChild(buttn);
+				
+				newChoiceb = document.createElement( "BUTTON" );
+				document.body.appendChild( newChoiceb );
+				newChoiceb.className = "choiceb btn ca2";
+				newChoiceb.innerHTML = 'RESTART';
+				newChoiceb.id = 'Cid2';
+				
+				document.getElementById('b').src = "images/sprites/frown.png";
+				document.getElementById('d').innerHTML = "You put Oliver in a bad mood! He'll probably be cold tomorrow...";
+				document.getElementById('e').innerHTML = "Worst Ending";
+				
+				newChoiceb.addEventListener('click', () => {
+					SL1(); 
+				})
+				
+				winCondition = 0;
+			}
+			
+		</script>
+		
+		<title>Insomniac Dating Sim</title>
+		
+	</head>
+	
+	<body id='body'>
+		
+		<a href="index.html">
+			<button type='button' class='btn bt hom'>HOME</button>
+		</a>
+		
+		<a href="about.html">
+			<button type='button' class='btn bt res' onclick='SL1()'>DEVS</button>
+		</a>
+		
+		<img class='bg' id='a' src='images/background.png'>
+		<img class='sp' id='b' src='images/sprites/smile.png'>
+		<div class='tb' id='c'></div>
+		<div class='tt' id='d'>Hm? need something ducky?</div>
+		<div class='tn' id='e'>Oliver</div>
+		<button type='button' class='btn bt' id='f' onclick='SL2()'>Next</button>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+	</body>
+	
+</html>
